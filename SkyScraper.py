@@ -210,7 +210,7 @@ def sky_main():
 
         # print(link_count, count)
 
-        return used_articles
+    return used_articles
 
     #107 articles from 292 articles would have text extracted, initially.
     #Actually that was the last 2 days' news, so a few more (122 from 296 the next day!)
