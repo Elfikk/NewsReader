@@ -215,6 +215,15 @@ def sky_main():
     #107 articles from 292 articles would have text extracted, initially.
     #Actually that was the last 2 days' news, so a few more (122 from 296 the next day!)
 
+def generate_title_sky(file_name):
+    opener_length = len("httpsnewsskycomstory")
+    split_name = file_name.split("-")[:-1] #Last part is a unique ID for the article.
+    split_name[0] = split_name[0][opener_length:]
+
+    split_title = [title_part.capitalize() for title_part in split_name]
+
+    return " ".join(split_title)
+
 #For Sky News (1-6)
 #1. Open home page. x
 #2. Select all <a> tags inside the header div - inside the li 
@@ -234,6 +243,10 @@ def sky_main():
 #   to give recommended article. If liked, convert tts, and play. 
 
 if __name__ == "__main__":
+
+    # sky_title = "httpsnewsskycomstoryherschel-walker-former-nfl-star-and-senate-candidate-accused-by-second-woman-of-pressuring-her-to-have-abortion-12731153"
+
+    # print(generate_title_sky(sky_title)) #as intended
 
     sky_main()
 
